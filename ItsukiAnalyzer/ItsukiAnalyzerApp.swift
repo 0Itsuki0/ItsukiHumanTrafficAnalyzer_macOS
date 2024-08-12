@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct ItsukiAnalyzerApp: App {
+    let trackingModel = TrackingModel()
     var body: some Scene {
+        
         WindowGroup {
-            ContentView()
+            ContainerView()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+        .defaultSize(width: 300, height: 200)
+        .environmentObject(trackingModel)
+        
     }
 }
